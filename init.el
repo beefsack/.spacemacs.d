@@ -62,6 +62,7 @@ values."
    dotspacemacs-additional-packages
    '(
      dtrt-indent
+     dracula-theme
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
@@ -117,7 +118,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(dracula
+                         spacemacs-dark
                          spacemacs-light
                          solarized-light
                          solarized-dark
@@ -277,7 +279,7 @@ you should place you code here."
   (setq
    rust-format-on-save t
    dtrt-indent-min-quality 90.0
-   fci-rule-color "#5d4d7a"
+   fci-rule-color "#6272a4"
    gofmt-command "goimports"
    compilation-window-height 10
    )
@@ -301,7 +303,9 @@ you should place you code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(custom-safe-themes
+   (quote
+    ("d1abda58eedee72fbe28bbb7a5ff1953e1b7d2fa80913bcea9cb3cf12cf751f4" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
