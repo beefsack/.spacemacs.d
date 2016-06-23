@@ -262,6 +262,9 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (setq
+   tramp-ssh-controlmaster-options "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no"
+   )
   )
 
 (defun dotspacemacs/user-config ()
@@ -271,17 +274,23 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
-  (setq-default
+  (setq
    rust-format-on-save t
    dtrt-indent-min-quality 90.0
    fci-rule-color "#5d4d7a"
-   )
-  (setq
    gofmt-command "goimports"
    )
   (add-hook 'after-change-major-mode-hook 'fci-mode)
   (add-hook 'after-change-major-mode-hook 'highlight-indentation-mode)
   (add-hook 'after-change-major-mode-hook 'dtrt-indent-mode)
+  (add-hook 'php-mode-hook
+            (lambda ()
+              (add-hook
+               'after-save-hook
+               (lambda () (compile "hh_client --from emacs" nil))
+               nil
+               'make-it-local
+               )))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
