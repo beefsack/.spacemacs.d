@@ -279,6 +279,7 @@ you should place you code here."
    dtrt-indent-min-quality 90.0
    fci-rule-color "#5d4d7a"
    gofmt-command "goimports"
+   compilation-window-height 10
    )
   (add-hook 'after-change-major-mode-hook 'fci-mode)
   (add-hook 'after-change-major-mode-hook 'highlight-indentation-mode)
