@@ -85,7 +85,7 @@ values."
    ;; This variable has no effect if Emacs is launched with the parameter
    ;; `--insecure' which forces the value of this variable to nil.
    ;; (default t)
-   dotspacemacs-elpa-https t
+   dotspacemacs-elpa-https nil
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    dotspacemacs-elpa-timeout 5
    ;; If non nil then spacemacs will check for updates at startup
@@ -128,9 +128,9 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Roboto Mono for Powerline"
+   dotspacemacs-default-font '("Source Code Pro"
                                :size 15
-                               :weight normal
+                               :weight medium
                                :width normal
                                :powerline-scale 1.1)
    ;; The leader key
@@ -228,7 +228,7 @@ values."
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers 'relative
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
@@ -271,7 +271,14 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
-  (setq-default rust-format-on-save t)
+  (setq-default
+   rust-format-on-save t
+   dtrt-indent-min-quality 90.0
+   fci-rule-color "#5d4d7a"
+   )
+  (setq
+   gofmt-command "goimports"
+   )
   (add-hook 'after-change-major-mode-hook 'fci-mode)
   (add-hook 'after-change-major-mode-hook 'highlight-indentation-mode)
   (add-hook 'after-change-major-mode-hook 'dtrt-indent-mode)
