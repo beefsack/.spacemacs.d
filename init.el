@@ -37,6 +37,7 @@ values."
      ;; version-control
      auto-completion
      org
+     syntax-checking
      gtags
      ansible
      react
