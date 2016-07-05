@@ -37,7 +37,6 @@ values."
      ;; version-control
      auto-completion
      org
-     syntax-checking
      gtags
      ansible
      react
@@ -230,7 +229,7 @@ values."
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers 'relative
+   dotspacemacs-line-numbers nil
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
@@ -284,7 +283,6 @@ you should place you code here."
    compilation-window-height 10
    )
   (add-hook 'after-change-major-mode-hook 'fci-mode)
-  (add-hook 'after-change-major-mode-hook 'highlight-indentation-mode)
   (add-hook 'after-change-major-mode-hook 'dtrt-indent-mode)
   (add-hook 'php-mode-hook
             (lambda ()
