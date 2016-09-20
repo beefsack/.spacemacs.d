@@ -293,6 +293,12 @@ you should place you code here."
                nil
                'make-it-local
                )))
+  (add-hook
+   'rust-mode-hook
+   (lambda ()
+     (setq
+      fci-rule-column 100
+      )))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -304,7 +310,10 @@ you should place you code here."
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("d1abda58eedee72fbe28bbb7a5ff1953e1b7d2fa80913bcea9cb3cf12cf751f4" default))))
+    ("d1abda58eedee72fbe28bbb7a5ff1953e1b7d2fa80913bcea9cb3cf12cf751f4" default)))
+ '(package-selected-packages
+   (quote
+    (ws-butler toml-mode spacemacs-theme spaceline persp-mode org-plus-contrib open-junk-file neotree leuven-theme js2-refactor indent-guide help-fns+ helm-themes helm-pydoc helm-gtags helm-descbinds helm-ag google-translate ggtags flycheck-rust evil-surround evil-search-highlight-persist evil-matchit evil-iedit-state iedit emmet-mode drupal-mode ace-link ace-jump-helm-line smartparens flycheck go-mode projectile helm helm-core magit git-commit hydra php-mode f rust-mode which-key yaml-mode with-editor window-numbering web-mode web-beautify volatile-highlights vi-tilde-fringe use-package toc-org tagedit sql-indent smooth-scrolling smeargle slim-mode scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe restart-emacs rbenv rainbow-delimiters racer quelpa pyvenv pytest pyenv-mode py-yapf powerline popwin pip-requirements phpunit phpcbf php-extras php-auto-yasnippets paradox page-break-lines orgit org-repo-todo org-present org-pomodoro org-bullets multiple-cursors move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative less-css-mode json-mode js2-mode js-doc jade-mode info+ ido-vertical-mode hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-css-scss helm-company helm-c-yasnippet golden-ratio go-eldoc gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flx-ido fish-mode fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-numbers evil-nerd-commenter evil-mc evil-magit evil-lisp-state evil-indent-plus evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu elisp-slime-nav dtrt-indent dracula-theme diff-hl define-word cython-mode company-web company-tern company-statistics company-racer company-quickhelp company-go company-anaconda coffee-mode clean-aindent-mode chruby bundler buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-compile ansible-doc ansible aggressive-indent adaptive-wrap ace-window ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
